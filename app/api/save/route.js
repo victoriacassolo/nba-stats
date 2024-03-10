@@ -14,3 +14,9 @@ export async function POST(request) {
 
   return NextResponse.json(team);
 }
+
+export async function GET() {
+  const team = await prisma.team.findMany();
+
+  return NextResponse.json(team);
+}
